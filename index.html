@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Submit Lost Item</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="file"] {
+  padding: 5px;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+label {
+  font-weight: bold;
+}
+  </style>
+</head>
+<body>
+  <p><a href="view_items.php"> View Lost & Found Items</a></p>
+  <h1>Submit a Lost or Found Item</h1>
+  <form action="submit.php" method="POST" enctype="multipart/form-data">
+    <input type="text" name="item_name" placeholder="Item Name" required><br><br>
+    <textarea name="description" placeholder="Description" required></textarea><br><br>
+    <input type="date" name="date_found" required><br><br>
+
+    <!-- Image Upload -->
+<label for="item_image">Upload Image (optional):</label><br>
+<input type="file" name="item_image" id="item_image" accept="image/*"><br><br>
+
+    <!-- Dropdown for Category -->
+    <label>Category:</label>
+    <select name="category_id" required>
+      <option value="1">Electronics</option>
+      <option value="2">Clothing</option>
+      <option value="3">Documents</option>
+      <!-- Add more as per your `categories` table -->
+    </select><br><br>
+
+    <!-- Dropdown for Location -->
+    <label>Location:</label>
+    <select name="location_id" required>
+      <option value="1">Library</option>
+      <option value="2">Cafeteria</option>
+      <option value="3">Gym</option>
+      <!-- Add more as per your `locations` table -->
+    </select><br><br>
+        <!-- Lost or Found Selection -->
+<label for="item_type">Is this a lost or found item?</label><br>
+<select name="item_type" id="item_type" required>
+  <option value="lost">Lost</option>
+  <option value="found">Found</option>
+</select><br><br>
+
+<!-- Contact Info -->
+<label for="contact_info">Your Contact Info:</label><br>
+<input type="text" name="contact_info" id="contact_info" placeholder="Phone number or email" required><br><br>
+
+<input type="text" name="found_by" placeholder="Your Name" required><br><br>
+<button type="submit">Submit</button>
+
+
+  </form>
+</body>
+</html>
