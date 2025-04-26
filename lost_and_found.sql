@@ -54,13 +54,7 @@ CREATE TABLE `images` (
   `uploaded_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `images`
---
 
-INSERT INTO `images` (`image_id`, `item_id`, `image_path`, `uploaded_at`) VALUES
-(11, 35, 'uploads/1745395442_mac.jpeg', '2025-04-23 08:04:02'),
-(12, 37, 'uploads/1745396461_earbuds.jpeg', '2025-04-23 08:21:01');
 
 -- --------------------------------------------------------
 
@@ -85,15 +79,6 @@ CREATE TABLE `items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `items`
---
-
-INSERT INTO `items` (`item_id`, `item_name`, `description`, `date_found`, `location_id`, `category_id`, `found_by`, `status`, `created_at`, `item_type`, `contact_info`, `image_path`, `claimed_by`) VALUES
-(35, 'laptop', 'macbook m2 air midnight color ', '2025-04-23', 1, 1, 'Ram', 'claimed', '2025-04-23 08:04:02', 'found', '9573409069', NULL, 1),
-(36, 'Textbook ', 'DBMS Textbook by Dr.Hariram Chavan', '2025-04-22', 1, 3, 'John ', 'found', '2025-04-23 08:18:35', 'lost', '45634535', NULL, NULL),
-(37, 'Earbuds', 'Beats Earbuds red color ', '2025-04-23', 1, 1, 'Nathan', 'found', '2025-04-23 08:21:01', 'found', '9837459345', NULL, NULL),
-(38, 'Hoodie', 'Black hoodie size M ', '2025-04-15', 3, 2, 'reddy', 'claimed', '2025-04-23 09:14:05', 'found', '234234234', NULL, 1),
-(39, 'earphones', 'black wired earphones ', '2025-04-23', 2, 1, 'dbmsadsadpf', 'found', '2025-04-23 10:03:13', 'lost', '23543534', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -134,9 +119,7 @@ CREATE TABLE `status_logs` (
 -- Dumping data for table `status_logs`
 --
 
-INSERT INTO `status_logs` (`log_id`, `item_id`, `old_status`, `new_status`, `changed_at`) VALUES
-(38, 35, 'found', 'claimed', '2025-04-23 08:04:36'),
-(39, 38, 'found', 'claimed', '2025-04-24 05:34:08');
+
 
 -- --------------------------------------------------------
 
@@ -154,13 +137,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
---
 
-INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `created_at`, `role`) VALUES
-(1, 'mahesh', 'chirumamillamahesh2005@gmail.com', '$2y$10$gmRCZ1pWCIv9xtE02xZ20u31RZVRtTKfw1zHQRcP835koH.4.1cay', '2025-04-21 17:42:12', 'user'),
-(3, 'admin', 'chirumamillamahesh2005@gmail.com', '$2y$10$XtfLSun7gxh.NjpB6F0sku8wsx5mX0VJi933nrPAc6yBfHP8LP4We', '2025-04-21 18:35:49', 'admin'),
-(4, 'ram', 'dogears45@gmail.com', '$2y$10$aHz696eD68di33sQTqSxrOGsYXzqyKCLSwfma/XSV2.rMduS857My', '2025-04-23 08:03:15', 'user');
 
 --
 -- Indexes for dumped tables
